@@ -1,0 +1,527 @@
+/* Morrisons-specific styles */
+:root {
+    --morrisons-primary: #00539f;
+    --morrisons-secondary: #ff6b35;
+    --morrisons-accent: #00a651;
+    --morrisons-dark: #1a1a1a;
+    --morrisons-light: #f8f9fa;
+    --morrisons-gray: #6c757d;
+    --morrisons-border: #dee2e6;
+    --morrisons-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--morrisons-dark);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: white;
+    box-shadow: var(--morrisons-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    background: var(--morrisons-primary);
+    color: white;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top-left, .header-top-right {
+    display: flex;
+    gap: 20px;
+}
+
+.header-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.header-link:hover {
+    opacity: 0.8;
+}
+
+.header-main {
+    padding: 20px 0;
+}
+
+.header-main .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--morrisons-primary);
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--morrisons-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #004080;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--morrisons-primary);
+    border: 2px solid var(--morrisons-primary);
+}
+
+.btn-secondary:hover {
+    background: var(--morrisons-primary);
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--morrisons-primary) 0%, #0077cc 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-icon {
+    font-size: 32px;
+}
+
+.feature span:last-child {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Hero Carousel */
+.hero-carousel {
+    background: var(--morrisons-light);
+    padding: 60px 0;
+    position: relative;
+}
+
+.carousel-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--morrisons-accent) 0%, #00c853 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    text-align: center;
+    padding: 40px;
+}
+
+.slide-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.slide-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+}
+
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 0.2s;
+}
+
+.carousel-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+/* Shop by Aisle */
+.shop-aisles {
+    padding: 80px 0;
+    background: white;
+}
+
+.shop-aisles h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--morrisons-dark);
+}
+
+.aisles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.aisle-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--morrisons-light);
+    border-radius: 12px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.aisle-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--morrisons-shadow);
+    background: white;
+}
+
+.aisle-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.aisle-item span {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--morrisons-dark);
+}
+
+/* Ways to Save */
+.ways-to-save {
+    padding: 80px 0;
+    background: var(--morrisons-light);
+}
+
+.ways-to-save h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--morrisons-dark);
+}
+
+.savings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.saving-item {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--morrisons-shadow);
+}
+
+.saving-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--morrisons-primary);
+}
+
+.saving-item p {
+    font-size: 16px;
+    color: var(--morrisons-gray);
+    line-height: 1.6;
+}
+
+/* Useful Services */
+.useful-services {
+    padding: 80px 0;
+    background: white;
+}
+
+.useful-services h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--morrisons-dark);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-link {
+    display: block;
+    padding: 20px;
+    background: var(--morrisons-light);
+    color: var(--morrisons-primary);
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.service-link:hover {
+    background: var(--morrisons-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Fresh Ideas */
+.fresh-ideas {
+    padding: 80px 0;
+    background: var(--morrisons-light);
+}
+
+.fresh-ideas h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--morrisons-dark);
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.recipe-category {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--morrisons-shadow);
+    text-align: center;
+}
+
+.recipe-category h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--morrisons-dark);
+}
+
+/* Footer */
+footer {
+    background: var(--morrisons-dark);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-top .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .header-top-left, .header-top-right {
+        gap: 15px;
+    }
+    
+    .header-main .container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .hero h2 {
+        font-size: 28px;
+    }
+    
+    .hero-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .aisles-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+    
+    .savings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .hero h2 {
+        font-size: 24px;
+    }
+    
+    .aisles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .aisle-item {
+        padding: 20px 15px;
+    }
+    
+    .aisle-icon {
+        font-size: 36px;
+    }
+}
